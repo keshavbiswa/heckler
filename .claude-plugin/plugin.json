@@ -1,0 +1,8 @@
+{
+  "name": "heckler",
+  "version": "0.1.0",
+  "description": "Heckles your code, then fixes it. Every heckle is tied to a real defect and ships with a better solution.",
+  "author": {
+    "name": "Keshav Biswa"
+  }
+}
