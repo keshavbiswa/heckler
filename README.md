@@ -5,7 +5,7 @@ A Claude Code plugin that turns Claude into a sarcastic helper. It still does wh
 ## Install
 
 ```
-/plugin marketplace add keshavbiswa/heckler
+/plugin marketplace add keshavbiswa/squidward
 /plugin install squidward@squidward
 ```
 
