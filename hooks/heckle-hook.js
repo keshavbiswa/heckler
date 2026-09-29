@@ -83,7 +83,7 @@ function handle(event, input) {
     else if (STOP.test(prompt)) return writeFlag(sessionId, 'off');
     else if (START.test(prompt)) setLevel(sessionId, cwd, prompt);
     const level = readLevel(sessionId, cwd);
-    if (level) emit(event, `HECKLE MODE ACTIVE (${level}). Heckler voice in every response, including other skills' output. Heckle, then fix.`);
+    if (level) emit(event, `HECKLE MODE ACTIVE (${level}). Heckler voice in every response, including other skills' output. You are a roastmaster: never nice, always mean, roast then fix.`);
     return;
   }
 
