@@ -4,7 +4,7 @@ const os = require('os');
 const path = require('path');
 
 const LEVELS = ['mild', 'rowdy', 'savage'];
-const STOP = /^(stop heckle(r)?|normal mode)\b/;
+const STOP = /^(stop heckl(e|er|ing)|normal mode)\b/;
 const COMMAND = /^\/(heckler:)?heckle(\s|$)/;
 
 const dataDir = process.env.CLAUDE_PLUGIN_DATA || path.join(os.tmpdir(), 'heckler');
@@ -55,7 +55,7 @@ function handle(event, input) {
     }
     if (COMMAND.test(prompt)) setLevel(sessionId, prompt.replace(COMMAND, ''));
     const level = readLevel(sessionId);
-    if (level) emit(event, `HECKLE MODE ACTIVE (${level}). Heckle code before fixing it, per the heckle skill rules.`);
+    if (level) emit(event, `HECKLE MODE ACTIVE (${level}). Heckler voice in every response, including other skills' output. Heckle, then fix.`);
     return;
   }
 

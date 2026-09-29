@@ -21,7 +21,7 @@ test('heckle mode survives compaction and can be stopped', () => {
   assert.match(run('UserPromptSubmit', { prompt: '/heckle savage src/' }), /ACTIVE \(savage\)/);
   assert.match(run('UserPromptSubmit', { prompt: 'fix this' }), /ACTIVE \(savage\)/);
   assert.match(run('SessionStart', {}), /ACTIVE \(savage\)[\s\S]*## Iron rules/);
-  assert.strictEqual(run('UserPromptSubmit', { prompt: 'stop heckle' }), '');
+  assert.strictEqual(run('UserPromptSubmit', { prompt: 'stop heckling please' }), '');
   assert.strictEqual(run('SessionStart', {}), '');
 });
 

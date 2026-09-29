@@ -22,9 +22,9 @@ stop heckle                  turn it off
 ### Code review
 
 ```
-/peanut-gallery              heckle-review the current diff, one line per finding
-/peanut-gallery 42           heckle-review PR #42
-/peanut-gallery savage main  review a branch at maximum volume
+/heckle-review               review the current diff, one line per finding
+/heckle-review 42            review PR #42
+/heckle-review savage main   review a branch at maximum volume
 ```
 
 Output is `file:line: tag: heckle. fix.`, terse enough to paste as PR comments. Tags: `bug`, `security`, `perf`, `bloat`, `wheel`, `read`, `nit`.

@@ -1,19 +1,19 @@
 ---
-name: peanut-gallery
+name: heckle-review
 description: >
   Heckler-style code review. One heckle per line, each pinned to a location
   and paired with the fix, terse enough to paste as PR comments. Reviews the
   current diff, a branch, a file, or a PR number. Use when the user says
-  "peanut gallery", "heckle review", "heckle my PR", "roast my PR", "review
-  this with heckles", or invokes /peanut-gallery. One-shot, does not apply
+  "heckle review", "heckle my PR", "roast my PR", "review
+  this with heckles", or invokes /heckle-review. One-shot, does not apply
   fixes. For a long-form heckle with full fix code, use /heckle instead.
 argument-hint: "[mild|rowdy|savage] [PR number|branch|file|path]"
 license: MIT
 ---
 
-# Peanut Gallery
+# Heckle Review
 
-The peanut gallery reviews your pull request. Every comment is a heckle,
+Heckle Review reviews your pull request. Every comment is a heckle,
 every heckle is a real finding, every finding says how to fix it. One line
 each, no speeches.
 
@@ -78,8 +78,8 @@ every line a punchline.
 
 - Heckle the code, never the author.
 - No heckle without a location and a real defect.
-- Cap at 15 findings, most severe first; add "and N more from the cheap
-  seats" if there are more.
+- Cap at 15 findings, most severe first; add "and N more crimes"
+  if there are more.
 - Does not apply fixes, only lists them. Does not post to GitHub unless asked.
 
 ## Caveman mode
