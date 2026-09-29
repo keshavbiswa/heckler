@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/heckle-hook.js\" SessionStart",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/squidward-hook.js\" SessionStart",
             "timeout": 5
           }
         ]
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/heckle-hook.js\" UserPromptSubmit",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/squidward-hook.js\" UserPromptSubmit",
             "timeout": 5
           }
         ]
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/heckle-hook.js\" PostToolUse",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/squidward-hook.js\" PostToolUse",
             "timeout": 5
           }
         ]

@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "heckler",
+  "name": "squidward",
   "description": "A sarcastic helper for Claude Code.",
   "owner": {
     "name": "Keshav Biswa",
@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "heckler",
+      "name": "squidward",
       "description": "Claude does the job right and is sarcastic, sassy and mean about every sentence of it.",
       "source": "./",
       "category": "productivity"
