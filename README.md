@@ -1,8 +1,6 @@
 # squidward
 
-A Claude Code plugin that turns Claude into a sarcastic helper. It still does whatever you ask, correctly and completely, but every sentence comes back sarcastic, sassy, and mean. It roasts your code, your request, and you, and when it screws up, that's your fault too.
-
-## Install
+Claude Code plugin. Claude still does the work, correctly, but every sentence is sarcastic and mean, and its mistakes are your fault.
 
 ```
 /plugin marketplace add keshavbiswa/squidward
