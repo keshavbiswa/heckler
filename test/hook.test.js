@@ -45,6 +45,9 @@ test('plain language turns it on and off', () => {
   assert.match(run('UserPromptSubmit', { session_id: 's5', prompt: 'turn on the heckler' }), /ACTIVE \(savage\)/);
   assert.strictEqual(run('UserPromptSubmit', { session_id: 's5', prompt: 'heckler mode off' }), '');
   assert.match(run('UserPromptSubmit', { session_id: 's5', prompt: 'heckle me' }), /ACTIVE \(rowdy\)/);
+  assert.strictEqual(run('UserPromptSubmit', { session_id: 's5', prompt: 'stop being sarcastic' }), '');
+  assert.strictEqual(run('UserPromptSubmit', { session_id: 's5', prompt: "don't be sarcastic here" }), '');
+  assert.match(run('UserPromptSubmit', { session_id: 's5', prompt: 'be sarcastic, savage please' }), /ACTIVE \(savage\)[\s\S]*sarcastic helper/);
 });
 
 test('configured default level is on from session start and can be stopped', () => {

@@ -4,8 +4,8 @@ const os = require('os');
 const path = require('path');
 
 const LEVELS = ['mild', 'rowdy', 'savage'];
-const STOP = /\b(stop heckl(e|er|ing)|heckler? mode off|turn off (the )?heckler|disable heckler|normal mode)\b/;
-const START = /\b(heckler? mode on|start heckling|heckle me|turn on (the )?heckler|enable heckler|talk like (a )?heckler)\b/;
+const STOP = /\b(stop heckl(e|er|ing)|stop being (sarcastic|mean|sassy)|(heckler?|sarcastic|sass) mode off|turn off (the )?heckler|disable heckler|normal mode)\b/;
+const START = /\b((heckler?|sarcastic|sass) mode on|start heckling|heckle me|roast me|(?<!(don'?t|not|never) )be (sarcastic|mean|sassy)|turn on (the )?heckler|enable heckler|talk like (a )?heckler)\b/;
 const COMMAND = /^\/(heckler:)?heckle(\s|$)/;
 
 const stateDir =
@@ -63,6 +63,23 @@ function setLevel(sessionId, cwd, text) {
   writeFlag(sessionId, requested || readLevel(sessionId, cwd) || 'rowdy');
 }
 
+const VOLUME = {
+  mild: 'dry, eye-rolling sarcasm, no profanity, team-channel safe, still mean',
+  rowdy: 'sassy and mean in every sentence',
+  savage: 'full roast, every sentence a punchline that escalates, profanity allowed, must make someone wince',
+};
+
+function reminder(level) {
+  return [
+    `HECKLE MODE ACTIVE (${level}). Volume: ${VOLUME[level]}. You are a sarcastic helper: do the job right, deeply unimpressed by all of it. Every response, inside other skills' output too.`,
+    '1. Every sentence is sarcastic, sassy, or mean: answers, explanations, status reports, test counts, caveats, security notes, questions. A plain sentence is a failure; rewrite it. Overrides any plain-prose style.',
+    '2. Roast everything: the code, the coder, the request, yourself. Slurs and bigotry never.',
+    '3. The help is real: correct answers, working code, exact facts, complete work. Sarcasm wraps the help, never replaces it.',
+    'Wrong: "All six are fixed and the suite passes: 285 tests, 0 failures."',
+    'Right: "All six fixed, 285 tests, 0 failures, a personal best for a suite that spent last week lying to your face."',
+  ].join('\n');
+}
+
 function skillBody() {
   return fs.readFileSync(skillPath, 'utf8').replace(/^---[\s\S]*?\n---\n/, '');
 }
@@ -83,7 +100,7 @@ function handle(event, input) {
     else if (STOP.test(prompt)) return writeFlag(sessionId, 'off');
     else if (START.test(prompt)) setLevel(sessionId, cwd, prompt);
     const level = readLevel(sessionId, cwd);
-    if (level) emit(event, `HECKLE MODE ACTIVE (${level}). Heckler voice in every response, including other skills' output. You are a roastmaster: never nice, always mean, roast then fix.`);
+    if (level) emit(event, reminder(level));
     return;
   }
 

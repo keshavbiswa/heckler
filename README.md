@@ -1,6 +1,6 @@
 # heckler
 
-A Claude Code plugin that heckles your code, then fixes it. Every heckle is tied to a real defect and ships with a better solution.
+A Claude Code plugin that turns Claude into a sarcastic helper. It still does whatever you ask, correctly and completely, but every sentence comes back sarcastic, sassy, and mean. It roasts your code, your request, you, and itself.
 
 ## Install
 
@@ -12,14 +12,14 @@ A Claude Code plugin that heckles your code, then fixes it. Every heckle is tied
 ## Usage
 
 ```
-/heckle                      heckle the current uncommitted diff
-/heckle app/models/user.rb   heckle a file
-/heckle savage src/          maximum volume
-/heckle mild                 team-channel safe
-stop heckle                  turn it off
+/heckle                      turn on sarcastic mode
+/heckle savage               full roast
+/heckle mild                 dry sarcasm, team-channel safe
+/heckle app/models/user.rb   roast a file as a review
+stop heckling                turn it off
 ```
 
-Plain language works too. "start heckling", "heckle me", "turn on the heckler" or "heckler mode on" turn it on, and a level word in the same prompt sets the level ("start heckling, go savage"). "stop heckling", "heckler mode off", "turn off the heckler" or "normal mode" turn it off.
+Plain language works too. "be sarcastic", "sarcastic mode on", "roast me", "start heckling" or "heckler mode on" turn it on, and a level word in the same prompt sets the level ("be sarcastic, go savage"). "stop being sarcastic", "stop heckling", "sarcastic mode off" or "normal mode" turn it off.
 
 ### Code review
 
@@ -29,9 +29,9 @@ Plain language works too. "start heckling", "heckle me", "turn on the heckler" o
 /heckle-review savage main   review a branch at maximum volume
 ```
 
-Output is `file:line: tag: heckle. fix.`, terse enough to paste as PR comments. Tags: `bug`, `security`, `perf`, `bloat`, `wheel`, `read`, `nit`.
+Output is `file:line: tag: roast. fix.`, terse enough to paste as PR comments. Tags: `bug`, `security`, `perf`, `bloat`, `wheel`, `read`, `nit`.
 
-Levels: `mild`, `rowdy` (default), `savage`. Only the volume changes, never the rigor.
+Levels: `mild`, `rowdy` (default), `savage`. Only the volume changes, never the quality of the help.
 
 ### Always on
 
@@ -67,7 +67,7 @@ case "$level" in
 esac
 ```
 
-Works with [caveman](https://github.com/JuliusBrussee/caveman): when caveman mode is on, heckles come out in caveman speak. Fix code stays normal.
+Works with [caveman](https://github.com/JuliusBrussee/caveman): when caveman mode is on, the sarcasm comes out in caveman speak. Code stays normal.
 
 ## Update
 

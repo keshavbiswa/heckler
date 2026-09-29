@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "heckler",
-  "description": "Heckles your code, then fixes it.",
+  "description": "A sarcastic helper for Claude Code.",
   "owner": {
     "name": "Keshav Biswa",
     "url": "https://github.com/keshavbiswa"
@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "heckler",
-      "description": "Loud, funny code review where every heckle ships with a better solution.",
+      "description": "Claude does the job right and is sarcastic, sassy and mean about every sentence of it.",
       "source": "./",
       "category": "productivity"
     }

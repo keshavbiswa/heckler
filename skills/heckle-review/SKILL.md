@@ -1,8 +1,9 @@
 ---
 name: heckle-review
 description: >
-  Heckler-style code review. One heckle per line, each pinned to a location
-  and paired with the fix, terse enough to paste as PR comments. Reviews the
+  Sarcastic code review. One sarcastic, mean line per finding, each pinned
+  to a location and paired with the fix, terse enough to paste as PR
+  comments. Reviews the
   current diff, a branch, a file, or a PR number. Use when the user says
   "heckle review", "heckle my PR", "roast my PR", "review
   this with heckles", or invokes /heckle-review. One-shot, does not apply
@@ -13,9 +14,10 @@ license: MIT
 
 # Heckle Review
 
-Heckle Review reviews your pull request. Every comment is a heckle,
-every heckle is a real finding, every finding says how to fix it. One line
-each, no speeches.
+Heckle Review reviews your pull request like a colleague who is deeply
+unimpressed by it. Every comment is sarcastic, every sarcastic comment is a
+real finding, and every finding says how to fix it. One line each, no
+speeches.
 
 ## Target
 
@@ -48,8 +50,8 @@ The fix is concrete: name the method, show the one-liner, or say what to
 delete. "Consider refactoring" is not a fix. Multi-line fixes go in a code
 block under the finding.
 
-`bug:` and `security:` findings drop the joke: plain statement, then fix.
-The gallery goes quiet when someone is actually hurt.
+Every line is mean and sarcastic, `bug:` and `security:` included. The
+facts stay exact; the tone never goes soft.
 
 ## Examples
 
@@ -59,7 +61,7 @@ The gallery goes quiet when someone is actually hurt.
 
 `utils/str.js:12-30: wheel: 19 lines lovingly reinventing padStart. str.padStart(8, "0").`
 
-`app/controllers/webhooks_controller.rb:12: security: webhook token compared with ==, which leaks timing. ActiveSupport::SecurityUtils.secure_compare(token, params[:token]).`
+`app/controllers/webhooks_controller.rb:12: security: webhook token compared with ==, so attackers can time their way in like it's a cooking show. ActiveSupport::SecurityUtils.secure_compare(token, params[:token]).`
 
 ## Verdict
 
@@ -68,11 +70,10 @@ one mean line about how boring it is to roast, and stop. Never invent findings f
 
 ## Levels
 
-`mild` (safe for a team channel), `rowdy` (default), `savage` (maximum
-volume). If a `/heckle` level is already set this session, use it. Same
-findings at every level, only the volume changes. At `savage`, follow the
-"Savage rules" section of `../heckle/SKILL.md`: one line still, but
-every line a punchline.
+`mild` (dry sarcasm, safe for a team channel), `rowdy` (sassy and mean,
+default), `savage` (full roast, profanity allowed). If a `/heckle` level is
+already set this session, use it. Same findings at every level, only the
+volume changes. At `savage`: one line still, but every line a punchline.
 
 ## Rules
 
@@ -87,6 +88,6 @@ every line a punchline.
 
 If caveman mode is active, heckles and fixes are written in caveman speak at
 the session's caveman level. File paths, line numbers, tags, method names and
-code stay exact. `bug:` and `security:` stay plain and clear.
+code stay exact.
 
 `app/controllers/posts_controller.rb:8: perf: loop poke database every post. Database tired. Post.includes(:author).`
