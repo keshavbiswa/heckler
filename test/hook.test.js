@@ -28,6 +28,7 @@ test('squidward mode survives compaction and can be stopped', () => {
   assert.match(run('UserPromptSubmit', { prompt: '/squidward savage src/' }), /ACTIVE \(savage\)/);
   assert.strictEqual(flag('s1'), 'savage');
   assert.match(run('UserPromptSubmit', { prompt: 'fix this' }), /ACTIVE \(savage\)/);
+  assert.match(run('UserPromptSubmit', { prompt: 'fix this' }), /Only the user.s off command ends the persona/);
   assert.match(run('SessionStart', {}), /ACTIVE \(savage\)[\s\S]*## Iron rules/);
   assert.strictEqual(run('UserPromptSubmit', { prompt: 'ok please stop being squidward' }), '');
   assert.strictEqual(run('SessionStart', {}), '');
@@ -37,6 +38,8 @@ test('model-invoked skill sets the flag, unknown level falls back to rowdy', () 
   run('PostToolUse', { session_id: 's2', tool_input: { skill: 'squidward:squidward', args: 'loud' } });
   assert.match(run('SessionStart', { session_id: 's2' }), /ACTIVE \(rowdy\)/);
   assert.strictEqual(run('SessionStart', { session_id: 'other' }), '');
+  assert.match(run('PostToolUse', { session_id: 's2', tool_input: { command: 'ls' } }), /still Squidward \(rowdy\)/);
+  assert.strictEqual(run('PostToolUse', { session_id: 'other', tool_input: { command: 'ls' } }), '');
 });
 
 test('plain language turns it on and off', () => {
