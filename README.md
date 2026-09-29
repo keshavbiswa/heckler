@@ -5,7 +5,7 @@ A Claude Code plugin that heckles your code, then fixes it. Every heckle is tied
 ## Install
 
 ```
-/plugin marketplace add /path/to/heckler
+/plugin marketplace add keshavbiswa/heckler
 /plugin install heckler@heckler
 ```
 
@@ -32,6 +32,12 @@ Output is `file:line: tag: heckle. fix.`, terse enough to paste as PR comments. 
 Levels: `mild`, `rowdy` (default), `savage`. Only the volume changes, never the rigor.
 
 Works with [caveman](https://github.com/JuliusBrussee/caveman): when caveman mode is on, heckles come out in caveman speak. Fix code stays normal.
+
+## Update
+
+```
+/plugin marketplace update heckler
+```
 
 ## Development
 

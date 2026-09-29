@@ -3,7 +3,8 @@
   "name": "heckler",
   "description": "Heckles your code, then fixes it.",
   "owner": {
-    "name": "Keshav Biswa"
+    "name": "Keshav Biswa",
+    "url": "https://github.com/keshavbiswa"
   },
   "plugins": [
     {
