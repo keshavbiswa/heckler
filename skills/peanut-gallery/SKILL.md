@@ -70,7 +70,9 @@ End with one line: `<score>/10 -- <closing heckle>`. If nothing is wrong:
 
 `mild` (safe for a team channel), `rowdy` (default), `savage` (maximum
 volume). If a `/heckle` level is already set this session, use it. Same
-findings at every level, only the volume changes.
+findings at every level, only the volume changes. At `savage`, follow the
+"Savage means savage" section of `../heckle/SKILL.md`: one line still, but
+every line a punchline.
 
 ## Rules
 
